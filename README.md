@@ -2,9 +2,13 @@
 
 ## Roadmap
 
-- Se documenter sur les différents types d'attaques, et sur le format PDF ainsi que les logiciels associés (lecteur de PDF, parser)
-- Choisir et implémenter une attaque
-- Montrer comment se défendre contre l'attaque implémenté, et en général comment utiliser de manière sécurisé le format PDf
+- Documentation : 
+  - Format PDF
+  - Lecteurs de PDF
+  - Différents types d'attaques
+- Choix et implémentation d'une attaque
+- Analyse de l'attaque et proposition de mécanismes de défense
+- Réalisation d'une liste de bonnes pratiques pour se prémunir de ce type d'attaque 
 
 
 ## Bibliography
@@ -31,15 +35,15 @@
 
   https://en.wikipedia.org/wiki/PDF#Security
 
-  - on the digital signatures authentifying the pdf
+  - On the digital signatures authentifying the pdf
 
   https://dl.acm.org/doi/10.1145/3319535.3339812
 
-  - on the password encrypting the pdf
+  - On the password encrypting the pdf
 
   https://superuser.com/questions/56132/how-good-is-pdf-password-protection
 
-  - exploiting the PDF format:
+  - Exploiting the PDF format:
 
     PDf can contain
 
