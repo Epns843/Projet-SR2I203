@@ -6,7 +6,13 @@
   - Format PDF
   - Lecteurs de PDF
   - Différents types d'attaques
-- Choix et implémentation d'une attaque
+- Choix et implémentation d'une attaque : 
+  - Implémentation d'une attaque basique de type *arbitrary code execution* sans obfuscation, pour une seule platforme cible : 
+    - Élaboration du vecteur 
+    - Élaboration de la charge 
+  - Ajout d'obfuscation 
+  - Attaque indépendante de la plateforme cible
+  - Attaque indépendante du lecteur utilisé 
 - Analyse de l'attaque et proposition de mécanismes de défense
 - Réalisation d'une liste de bonnes pratiques pour se prémunir de ce type d'attaque 
 
@@ -15,15 +21,32 @@
 
 - Overview
 
-  https://en.wikipedia.org/wiki/PDF
+  https://en.wikipedia.org/wiki/PDF : 
 
-  https://malwarecheese.com/posts/pdf-malware-analysis.html
+    -> PDF documents can support JavaScript
+    -> PDF uses a subset of the PostScript page description programming language : runs in an interpreter to generate images  
+    -> attacks : modifying content without invalidating the signature, extract encrypted content, DoS, arbitrary code execution 
 
-  https://0xdf.gitlab.io/2018/09/12/malware-analysis-yourexploitpdf.html
+  https://malwarecheese.com/posts/pdf-malware-analysis.html : 
 
-  https://0xdf.gitlab.io/2018/08/06/malware-analysis-inovoice-019338pdf.html
+    -> explique la structure d'un fichier PDF 
+    -> possible de mettre un objet contenant des instructions à exécuter dès l'ouverture du document 
+    -> possibilité d'évaluer la dangerosité d'un PDf avant de l'ouvrir -> cf. **Tools** : `pdfid`  
+
+  https://0xdf.gitlab.io/2018/09/12/malware-analysis-yourexploitpdf.html : 
+  
+    -> décorticage d'une attaque par PDF exécutant un code arbitraire 
+    -> existance d'entrées du dictionnaire d'action permettant de discréditer la plateforme sur laquelle le fichier est ouvert 
+    -> foinctionnement de l'attaque : ouverture d'un shell, connexion à un site malveillant, téléchargement d'un malware hébergé sur le site, exécution du malware 
+    -> le fait que le PDF soit frauduleux est détecté par un minorité d'agent de sécurité, mais le malware qu'il essaye d'exécuter l'est part une grande majorité -> attaque pas si efficace 
+
+  https://0xdf.gitlab.io/2018/08/06/malware-analysis-inovoice-019338pdf.html : 
+  
+    -> même type d'attaque que la précédente, un peu plus élaborée mais demande à l'utilisateur son autorisation pour ouvrir un second document lors de l'attaque -> si vigilant, peut être empêchée    
 
   https://www.sans.org/blog/pdf-malware-analysis/
+
+    -> décorticage d'une attaque par injection de code arbitraire via PDF 
 
   https://www.sans.org/posters/cheat-sheet-for-analyzing-malicious-documents/
 
