@@ -2,7 +2,7 @@
 
 ## Rapport du projet 
 
-Le rapport du projet est dans le fichier rapport.md
+Le rapport du projet est dans le fichier rapport.pdf
 
 
 ## `examples` 
